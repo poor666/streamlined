@@ -46,6 +46,8 @@ class Streamlined::UI
   declarative_scalar :display_formats, :default => {}
   declarative_scalar :default_order_options, :default => {},
                      :writer => Proc.new { |x| x.is_a?(Hash) ? x : {:order => x}}
+  declarative_scalar :default_filter_options, :default => {},
+                                        :writer => Proc.new { |x| x.is_a?(Hash) ? x : {:order => x}}
   # Export definitions
   declarative_attribute '*args', :exporters, :default => [:enhanced_xml_file, :xml_stylesheet, :enhanced_xml, :xml, :csv, :json, :yaml]
   declarative_scalar              :allow_full_download,        :default => true

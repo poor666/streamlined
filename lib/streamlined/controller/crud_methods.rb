@@ -165,7 +165,7 @@ module Streamlined::Controller::CrudMethods
       rethash.merge!(:include => model_ui.filterable_associations + model_ui.additional_includes)
       rethash
     else
-      {}  
+      model_ui.default_filter_options
     end
   end  
   
